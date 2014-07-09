@@ -24,12 +24,18 @@ if (!file.exists("data/extracted_data.txt")) {
 ##=========================================## 
 ## 1. Read the extracted file
 ##=========================================##
-#all_data <- read.table("household_power_consumption.txt", comment.char = "", nrows=2075259, header = TRUE, sep = ";", quote = "", stringsAsFactors=FALSE, colClasses=c("factor","character","numeric","numeric","numeric","numeric","numeric","numeric","numeric"), na.strings = "?")
-
 all_data <- read.table("data/extracted_data.txt", header = TRUE, sep = "\t", nrows = 2880, colClasses=c("character","character","numeric","numeric","numeric","numeric","numeric","numeric","numeric"))
 
 datetime <- strptime(paste(all_data$Date, all_data$Time), "%d/%m/%Y %H:%M:%S")
 
+##=========================================## 
+## 2. Plot 4 creation
+## 4 plots created for date and 
+##   1. Global Active power
+##   2. sub metering 1, 2 and 3
+##   3. Voltage
+##   4. global reactive power
+##=========================================##
 png("plot4.png", width = 480, height = 480, units = "px")
 par(mfcol = c(2,2))
 

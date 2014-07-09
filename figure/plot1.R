@@ -24,14 +24,15 @@ if (!file.exists("data/extracted_data.txt")) {
 ##=========================================## 
 ## 1. Read the extracted file
 ##=========================================##
-#all_data <- read.table("household_power_consumption.txt", comment.char = "", nrows=2075259, header = TRUE, sep = ";", quote = "", stringsAsFactors=FALSE, colClasses=c("factor","character","numeric","numeric","numeric","numeric","numeric","numeric","numeric"), na.strings = "?")
-
 all_data <- read.table("data/extracted_data.txt", header = TRUE, sep = "\t", nrows = 2880, colClasses=c("factor","character","numeric","numeric","numeric","numeric","numeric","numeric","numeric"))
 
+##=========================================## 
+## 2. Plot 1 creation
+## Histogram for Global Active Power
+##=========================================##
 png("plot1.png", width = 480, height = 480, units = "px");
 hist(all_data$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 dev.off()
-#par(mfcol = c(2,2));
 
 ############################################# 
 ##      End of the script - cleanup        ##
