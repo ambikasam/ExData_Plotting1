@@ -112,3 +112,48 @@ The four plots that you will need to construct are shown below.
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
+Script
+=========== 
+
+#### The flow of the script
+```R
+There are 5 R script files and 4 png files.  
+1. plots.R: Main script file which downloads the input data, unzips it and extracts the data required for the plots.  
+2. plot1.R: Generates plot1.png [as the figure above  for Plot 1] using the extracted data.  
+If extracted data does not exist, then, it would source plots.R and do the needful. Same is applicable for the other 3 R scripts.  
+3. plot2.R: Generates plot2.png [as the figure above  for Plot 2] using the extracted data.  
+4. plot3.R: Generates plot3.png [as the figure above  for Plot 3] using the extracted data.  
+5. plot4.R: Generates plot4.png [as the figure above  for Plot 4] using the extracted data.  
+```
+  
+### Packages
+```R
+Only package required is sqldf. This package is used in plots.R script.  
+To install and use `sqldf` package; please follow this link http://cran.r-project.org/web/packages/sqldf/INSTALL  
+```
+  
+#### Functions/Blocks in Script  
+```R
+Functions [in plots.R]: load_package/s: To check if there are packages installed; if not installed, then, install it and load it.  
+```
+
+#### Execution of the script  
+1. Before executing any one of these, ensure you have set the correct directory path. Path is where this code is checked out and run any of the 4 R scripts to generate the related png file.   
+2. Execution  
+   a. To execute this script in R console or R studio `source("plot1.R")`  OR `source("plot2.R")` OR `source("plot3.R")` OR `source("plot4.R")`
+   b. To execute on the command line `R CMD BATCH plot1.R` OR `R CMD BATCH plot2.R`  OR `R CMD BATCH plot3.R`  OR `R CMD BATCH plot4.R` and to check the execution process `vi plot1.Rout`, similarly for the other R scripts.  
+3. After the execution of the plot 1 to 4 R scripts, it would generate respective 'png' files in the same location.  
+  
+#### Environment details
+Environment in which script has been developed, executed and verified.
+
+* Mac: OS X 10.9.2
+* R: version 3.0.2
+* Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+#### Verification
+* Scripts: plots.R, plot1.R, plot2.R, plot3.R, plot4.R
+* These scripts have been executed under different location (folders) to ensure it provides the same results [png files].
+* Also, executed every single line of command/block of command separately on R console and even this produced the same results. 
+* Each of these scripts has been run with and without data folder and zip [household_power_consumption.zip] file; the average time take without "data" folder and zip file is "30" secs and with it takes less than 1 sec. This timing does not include without packages installed.  
+
