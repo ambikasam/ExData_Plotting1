@@ -118,9 +118,10 @@ Script
 #### The flow of the script
 ```R
 There are 5 R script files and 4 png files.  
-1. plots.R: Main script file which downloads the input data, unzips it and extracts the data required for the plots.  
+1. plots.R: Main script file. This downloads and unzips the input data, then, extracts the data.  
 2. plot1.R: Generates plot1.png [as the figure above  for Plot 1] using the extracted data.  
-If extracted data does not exist, then, it would source plots.R and do the needful. Same is applicable for the other 3 R scripts.  
+If extracted data does not exist, then, it would source plots.R and do the needful.  
+Same is applicable for the other 3 R scripts.  
 3. plot2.R: Generates plot2.png [as the figure above  for Plot 2] using the extracted data.  
 4. plot3.R: Generates plot3.png [as the figure above  for Plot 3] using the extracted data.  
 5. plot4.R: Generates plot4.png [as the figure above  for Plot 4] using the extracted data.  
@@ -129,12 +130,14 @@ If extracted data does not exist, then, it would source plots.R and do the needf
 ### Packages
 ```R
 Only package required is sqldf. This package is used in plots.R script.  
-To install and use `sqldf` package; please follow this link http://cran.r-project.org/web/packages/sqldf/INSTALL  
+To install and use `sqldf` package; please follow this 
+link http://cran.r-project.org/web/packages/sqldf/INSTALL  
 ```
   
 #### Functions/Blocks in Script  
 ```R
-Functions [in plots.R]: load_package/s: To check if there are packages installed; if not installed, then, install it and load it.  
+Functions [in plots.R]: load_package/s: 
+   To check if there are packages installed; if not installed, then, install it and load it.  
 ```
 
 #### Execution of the script  
